@@ -58,12 +58,16 @@ function App() {
       })
     );
   };
+
+  const onDelete = (targetId) => {
+    setTodos(todos.filter((todo) => todo.id !== targetId));
+  };
   return (
     <div className="App">
       <Header />
       {/* 4. props로 넘겨주기 */}
       <TodoEditor onCreate={onCreate} />
-      <TodoList todos={todos} onUpdate={onUpdate} />
+      <TodoList todos={todos} onUpdate={onUpdate} onDelete={onDelete} />
     </div>
   );
 }
