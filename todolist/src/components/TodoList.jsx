@@ -38,7 +38,6 @@ const TodoList = ({ todos, onUpdate, onDelete }) => {
         <div>전체 투두: {totalCount}</div>
         <div>완료 투두: {doneCount}</div>
         <div>미완 투두: {notDoneCount}</div>
-        <div>미완 투두: {notDoneCount}</div>
       </div>
       <input
         value={search}
