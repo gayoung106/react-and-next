@@ -18,9 +18,27 @@ const TodoList = ({ todos, onUpdate, onDelete }) => {
     );
   };
 
+  const getAnalyzedTodoData = () => {
+    const totalCount = todos.length;
+    const doneCount = todos.filter((todo) => todo.isDone).length;
+    const notDoneCount = totalCount - doneCount;
+    return {
+      totalCount,
+      doneCount,
+      notDoneCount,
+    };
+  };
+
+  const { totalCount, doneCount, notDoneCount } = getAnalyzedTodoData();
+
   return (
     <div className="TodoList">
       <h4>오늘의 할 일</h4>
+      <div>
+        <div>전체 투두: {totalCount}</div>
+        <div>완료 투두: {doneCount}</div>
+        <div>미완 투두: {notDoneCount}</div>
+      </div>
       <input
         value={search}
         onChange={onChangeSearch}
