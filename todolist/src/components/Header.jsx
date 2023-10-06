@@ -1,4 +1,5 @@
 import "./Header.css";
+import { memo } from "react";
 
 const Header = () => {
   const options = {
@@ -16,4 +17,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default memo(Header);

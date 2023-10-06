@@ -86,7 +86,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-
       <TodoEditor onCreate={onCreate} />
       <TodoList todos={todos} onUpdate={onUpdate} onDelete={onDelete} />
     </div>
