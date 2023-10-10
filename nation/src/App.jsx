@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Search from "./pages/Search";
 import Country from "./pages/Country";
 import NotFound from "./pages/NotFound";
+import Layout from "./components/Layout";
 
 function App() {
   const nav = useNavigate();
@@ -12,7 +13,7 @@ function App() {
     nav("/search");
   };
   return (
-    <>
+    <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />
@@ -26,7 +27,7 @@ function App() {
         <Link to={"/country"}>Country</Link>
         <button onClick={onClick}>서치페이지로 이동</button>
       </div>
-    </>
+    </Layout>
   );
 }
 
