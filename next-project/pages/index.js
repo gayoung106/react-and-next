@@ -1,3 +1,32 @@
+import Link from "next/link";
+import { useRouter } from "next/router";
+
 export default function Home() {
-  return <div>HOME PAGE</div>;
+  const code = "KOR";
+  const router = useRouter();
+
+  const onClickButton = () => {
+    router.push("/search");
+  };
+  return (
+    <div>
+      HOME PAGE
+      <div>
+        <button onClick={onClickButton}>Search 페이지로 이동</button>
+      </div>
+      <div>
+        <Link href={"/search"}>Search 페이지로 이동</Link>
+      </div>
+      <div>
+        <Link
+          href={{
+            pathname: "/country/[code]",
+            query: { code: code },
+          }}
+        >
+          {code} 페이지로 이동
+        </Link>
+      </div>
+    </div>
+  );
 }
